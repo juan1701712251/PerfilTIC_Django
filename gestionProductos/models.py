@@ -7,11 +7,11 @@ class Category(models.Model):
     name = models.CharField('Category', max_length = 100)
     image = models.ImageField(upload_to='photos_category')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
-class Products(models.Model):   
+class Product(models.Model):   
     idP = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=100)
@@ -20,4 +20,5 @@ class Products(models.Model):
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
     image = models.ImageField(upload_to='photos_products')
 
-
+    def __str__(self):
+        return self.name
