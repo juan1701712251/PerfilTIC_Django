@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}{% endblock %}</title>
+    <title>Productos</title>
         {# Cargamos la librería #}
         {% load bootstrap4 %}
    
@@ -12,10 +12,14 @@
         {% bootstrap_css %}
 </head>
 <body>
-    {# Aqui debe ir el navbar con el login, profile, categories etcc #}
-    {% block content %}{% endblock %}
-
-    {# Aqui debe ir el footer #}
     {% bootstrap_javascript jquery='full' %}
+    {% include "navbar.htm" %}
+    {% block content %}{% endblock %}
+    <footer class="py-5 bg-dark">
+        <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Juan Sebastian Gómez Giraldo</p>
+        </div>
+    </footer>
+    
 </body>
 </html>

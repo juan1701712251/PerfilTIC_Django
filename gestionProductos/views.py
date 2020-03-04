@@ -5,8 +5,11 @@ from gestionProductos.models import Category
 def categories(request):
     cat = Category.objects.all()
     context = {'Categories':cat}
+
+    
     #Abrir plantilla
     #doc = loader.get_template('inicio.htm')
     #documento = doc.render({'variable':var1})
 
     return render(request,'categories.htm',context)
+

@@ -9,5 +9,7 @@ def inicio(request):
     #doc = loader.get_template('inicio.htm')
     #documento = doc.render({'variable':var1})
 
-    return render(request,'inicio.htm',{'variable':var1})
+    return render(request,'base.htm',{'variable':var1})
 
+def login(request):
+    return render(request,'login.htm')

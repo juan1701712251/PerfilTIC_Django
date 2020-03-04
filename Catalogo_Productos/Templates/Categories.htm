@@ -1,33 +1,146 @@
 {% extends "base.htm" %}
-
-{% block title %}Categorias{% endblock %}
-
 {% block content %}
+<div class="container">
 
-        {% if Categories %}    
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Foto</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for cat in Categories %}
-                <tr>
-                    <th scope="row">{{cat.name}}</th>
-                    <td>
-                        <figure>
-                            <img src='gestionProductos/{{cat.image}}' alt="{{cat.image}}" height="42" width="42">
-                        </figure>
-                    </td>
-                </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        {% else %}
-              No hay Productos:
-              {{Categories}}
-        {% endif %}
-
+            <div class="row">
+                
+              <div class="col-lg-3">
+                <p>
+                    {% if Categories %}
+                        {% for cat in Categories %}
+                            {{cat.parentCategory.idC}}
+                            {% if cat.parentCategory.idC == 0 %}
+                                
+                                <a href="/gestionProductos/" class="list-group-item">{{cat.name}}</a>
+                                <a class="btn btn-primary" data-toggle="collapse" href="{{cat.name}}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                    {{cat.name}}
+                                </a>
+                            {% else %}
+                                <div class="collapse" id="{{cat.parentCategory.name}}">
+                                    <div class="card card-body">
+                                        {{cat.name}}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        No hay Categorias
+                    {% endif %}
+                </p>
+              </div>
+              <!-- /.col-lg-3 -->
+        
+              <div class="col-lg-9">
+        
+        
+                <div class="row">
+                    
+                  <div class="col-lg-4 col-md-6 mb-4">
+                    
+                    <div class="card h-100">
+                      <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                      <div class="card-body">
+                        <h4 class="card-title">
+                          <a href="#">Item One</a>
+                        </h4>
+                        <h5>$24.99</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                      </div>
+                      <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                      <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                      <div class="card-body">
+                        <h4 class="card-title">
+                          <a href="#">Item Two</a>
+                        </h4>
+                        <h5>$24.99</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                      </div>
+                      <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                      <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                      <div class="card-body">
+                        <h4 class="card-title">
+                          <a href="#">Item Three</a>
+                        </h4>
+                        <h5>$24.99</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                      </div>
+                      <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                      <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                      <div class="card-body">
+                        <h4 class="card-title">
+                          <a href="#">Item Four</a>
+                        </h4>
+                        <h5>$24.99</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                      </div>
+                      <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                      <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                      <div class="card-body">
+                        <h4 class="card-title">
+                          <a href="#">Item Five</a>
+                        </h4>
+                        <h5>$24.99</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                      </div>
+                      <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                      <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                      <div class="card-body">
+                        <h4 class="card-title">
+                          <a href="#">Item Six</a>
+                        </h4>
+                        <h5>$24.99</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                      </div>
+                      <div class="card-footer">
+                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                      </div>
+                    </div>
+                  </div>
+        
+                </div>
+                <!-- /.row -->
+        
+              </div>
+              <!-- /.col-lg-9 -->
+        
+            </div>
+            <!-- /.row -->
+        
+          </div>
+            
 {% endblock %}
