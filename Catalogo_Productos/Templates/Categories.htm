@@ -1,0 +1,33 @@
+{% extends "base.htm" %}
+
+{% block title %}Categorias{% endblock %}
+
+{% block content %}
+
+        {% if Categories %}    
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Foto</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for cat in Categories %}
+                <tr>
+                    <th scope="row">{{cat.name}}</th>
+                    <td>
+                        <figure>
+                            <img src='gestionProductos/{{cat.image}}' alt="{{cat.image}}" height="42" width="42">
+                        </figure>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+              No hay Productos:
+              {{Categories}}
+        {% endif %}
+
+{% endblock %}

@@ -10,3 +10,4 @@ def inicio(request):
     #documento = doc.render({'variable':var1})
 
     return render(request,'inicio.htm',{'variable':var1})
+
