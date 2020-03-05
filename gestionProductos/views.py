@@ -8,7 +8,7 @@ def categories(request,idC=None):
     context = {}
     if idC is not None:
         Pro = Product.objects.filter(category_id = idC)
-    cat = Category.objects.all()
+    cat = Category.objects.all().order_by('parentCategory')
     context["Categories"]=cat
     context["Products"]=Pro
 
