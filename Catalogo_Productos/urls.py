@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/',login),
     path('',include('gestionProductos.urls')),
+    path('<int:idC>',include('gestionProductos.urls')),
     path('gestionProductos/',include('gestionProductos.urls')),
 ]
